@@ -14,8 +14,8 @@ on:
   workflow_dispatch:
 
 env:
-  MY_IMAGE_NAME: "${{ github.event.repository.name }}"  # the name of the image produced by this build, matches repo names
-  MY_IMAGE_DESC: "cblue (container blue) is a bootable container distribution based on Fedora Silverblue, inspired by the Universal Blue project."
+  IMAGE_NAME: "${{ github.event.repository.name }}"  # the name of the image produced by this build, matches repo names
+  IMAGE_DESC: "cblue (container blue) is a bootable container distribution based on Fedora Silverblue, inspired by the Universal Blue project."
   IMAGE_REGISTRY: "ghcr.io/${{ github.repository_owner }}"  # do not edit
 
 concurrency:
