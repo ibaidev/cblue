@@ -1,0 +1,31 @@
+---
+# yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
+
+name: cblue
+description: This is a bootable container distribution based on Fedora Silverblue.
+
+base-image: quay.io/fedora/fedora-silverblue
+image-version: latest
+
+modules:
+  - type: rpm-ostree
+    install:
+      - git-credential-libsecret
+      - gnome-shell-extension-dash-to-dock
+      - gnome-shell-extension-dash-to-panel
+      - powerline
+      - powerline-fonts
+      - zsh
+      - zsh-autosuggestions
+      - zsh-syntax-highlighting
+    remove:
+      - firefox
+      - firefox-langpacks
+
+  - type: default-flatpaks
+    notify: true
+    system:
+      install:
+        - org.mozilla.firefox
+
+  - type: signing
