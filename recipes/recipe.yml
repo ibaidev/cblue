@@ -18,6 +18,7 @@ modules:
       - zsh
       - zsh-autosuggestions
       - zsh-syntax-highlighting
+      - xhost
     remove:
       - firefox
       - firefox-langpacks
